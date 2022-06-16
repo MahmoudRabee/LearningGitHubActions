@@ -24,7 +24,7 @@ jobs:
     - name: print current data
       run: Get-Date
   job3:
-    runs-on: mac-latest
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v3
     - name: print current date in Mac
