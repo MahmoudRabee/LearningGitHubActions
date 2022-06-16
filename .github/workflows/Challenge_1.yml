@@ -1,0 +1,41 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Challenge one
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: print data in ubuntu
+        run: date
+  job2:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: print current data
+      run: Get-Date
+  job3:
+    runs-on: mac-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: print current date in Mac
+      run: Date
+  job4:
+    needs: ['job1', 'job2', 'job3']
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Last one
+      run: echo "Last one finished"
+      
+      
+      
