@@ -1,7 +1,7 @@
 name: Challenge two
 on: push
 env: 
-  FILE_NAME
+  FILE_NAME: "Hello.txt"
 jobs:
   apply-artifact:
     runs-on: ubuntu-latest
